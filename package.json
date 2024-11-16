@@ -1,0 +1,15 @@
+{
+  "name": "keeptradecut",
+  "version": "1.0.0",
+  "description": "SCRAPPING THE DATA OF NFL PLAYERS ON KEEPTRADECUT PLATFORM",
+  "main": "ktc.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "MUHAMMAD HASSAN JAVED",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0"
+  }
+}

@@ -1,7 +1,6 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const fs = require('fs');
-const path = require('path');
 
 async function scrapeKTC() {
   const URL = 'https://keeptradecut.com/dynasty-rankings?page=0&filters=QB|WR|RB|TE|RDP&format=1'; // Start from page 0
@@ -84,10 +83,8 @@ async function main() {
   try {
     let players = await scrapeKTC();
     players = await scrapeSuperflexData(players);
-
-    const filePath = path.resolve(__dirname, '../webscrap/ktcJSON.json');
     // Write the players data to ktcJSON.json
-    fs.writeFile(filePath, JSON.stringify(players, null, 2), (err) => {
+    fs.writeFile('ktcJSON.json', JSON.stringify(players, null, 2), (err) => {
       if (err) {
         console.error('Error writing to file', err);
       } else {
